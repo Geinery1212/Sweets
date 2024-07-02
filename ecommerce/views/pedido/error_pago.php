@@ -1,0 +1,1 @@
+<h2>El pago no es valido</h2>

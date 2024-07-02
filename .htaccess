@@ -1,0 +1,27 @@
+# # PRODUCCION
+# # Activar el motor de reescritura
+# RewriteEngine On
+# RewriteBase /
+
+# # Configurar una página de error 404 personalizada
+# ErrorDocument 404 https://enjoyyoursweets.000webhostapp.com/ecommerce/error/index
+
+# # Si la solicitud no es para un archivo existente o un directorio existente
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+
+# # Redirigir todas las demás solicitudes al index.php con los parámetros site, controller, y action
+# RewriteRule ^(.*)/(.*)/(.*) index.php?site=$1&controller=$2&action=$3
+
+
+# LOCAL
+<IfModule mod_rewrite.c>
+RewriteEngine on
+ErrorDocument 404 http://localhost/projects/ecommer_php_sweet/error/index
+RewriteCond %{SCRIPT_FILENAME} !-d 
+RewriteCond %{SCRIPT_FILENAME} !-f 
+RewriteRule ^(.*)/(.*)/(.*) index.php?site=$1&controller=$2&action=$3
+</IfModule>
+
+
+
